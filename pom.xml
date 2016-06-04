@@ -1,0 +1,50 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<parent>
+		<groupId>com.depend.parent</groupId>
+		<artifactId>parent</artifactId>
+		<version>0.0.1-SNAPSHOT</version>
+	</parent>
+
+	<groupId>com.activemq</groupId>
+	<artifactId>activemq</artifactId>
+
+	<dependencies>
+		<!-- 在activemq-client的依赖中存在jms接口定义，所以不需要手动滴去添加这个依赖包 -->
+		<!-- <dependency> <groupId>javax.jms</groupId> <artifactId>jms</artifactId> 
+			<version>1.1</version> </dependency> -->
+
+		<!-- <dependency> <groupId>org.apache.activemq</groupId> <artifactId>activemq-pool</artifactId> 
+			<version>5.12.1</version> </dependency> -->
+
+		<!-- <dependency> <groupId>org.apache.activemq</groupId> <artifactId>activemq-core</artifactId> 
+			<version>5.6.0</version> </dependency> -->
+
+
+		<!-- 5.9.0之后 activemq-core换成了 activemq-client -->
+		<dependency>
+			<groupId>org.apache.activemq</groupId>
+			<artifactId>activemq-client</artifactId>
+			<version>5.9.0</version>
+		</dependency>
+
+		<dependency>
+			<groupId>org.slf4j</groupId>
+			<artifactId>slf4j-log4j12</artifactId>
+		</dependency>
+	</dependencies>
+
+	<!-- 修改当前项目依赖jar的仓库地址 -->
+	<repositories>
+		<repository>
+			<id> central</id>
+			<name> Maven Repository Switchboard</name>
+			<layout>default</layout>
+			<url>http://repo1.maven.org/maven2</url>
+			<snapshots>
+				<enabled>false</enabled>
+			</snapshots>
+		</repository>
+	</repositories>
+</project>
